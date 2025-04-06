@@ -1,5 +1,7 @@
 {
   "cSpell.words": [
-    "PYTHONPATH"
+    "blpop",
+    "PYTHONPATH",
+    "rpush"
   ]
 }
