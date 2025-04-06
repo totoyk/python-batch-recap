@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  handler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: handler
+    command: python jobs/handlers/sample_handler.py
+    depends_on:
+      - redis
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: worker
+    command: python jobs/workers/sample_worker.py
+    depends_on:
+      - redis
+
+volumes:
+  redis_data:
