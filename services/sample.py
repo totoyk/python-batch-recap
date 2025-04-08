@@ -3,7 +3,7 @@ from shared.models.sample import Sample
 
 class SampleService:
     def __init__(self):
-        pass
+        self.service = SampleService()
 
     def process(self, sample: Sample):
         # Add your processing logic here

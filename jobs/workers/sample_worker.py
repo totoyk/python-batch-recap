@@ -23,8 +23,6 @@ def _worker(
 
     finally:
         print("Worker finished")
-        # Cleanup code here
-        pass
 
 
 def sample_worker() -> None:
